@@ -103,14 +103,14 @@
   command: ./configure
   name: "Configuring leptonica source"
   register: leptonica_configure
-  when: leptonica_source_unpack|changed
+  when: leptonica_source_unpack is changed
 - 
   args: 
     chdir: "{{ leptonica_install_dir }}"
   become: true
   name: "Installing Leptonica -- Takes a While"
   shell: "make && make install"
-  when: leptonica_configure|changed
+  when: leptonica_configure is changed
 - 
   get_url: 
     dest: "/tmp/{{ tesseract_version }}.tar.gz"
@@ -131,11 +131,11 @@
   shell: " ./autogen.sh && ./configure --enable-debug"
   name: "Configuring tesseract source"
   register: tesseract_configure
-  when: tesseract_source_unpack|changed
+  when: tesseract_source_unpack is changed
 - 
   args: 
     chdir: "{{ tesseract_install_dir }}"
   become: true
   name: "Installing tesseract"
   shell: 'sudo LDFLAGS="-L/usr/local/lib" CFLAGS="-I/usr/local/include" make && make install && make install-langs && ldconfig'
-  when: tesseract_configure|changed
+  when: tesseract_configure is changed
