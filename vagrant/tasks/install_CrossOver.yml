@@ -139,3 +139,8 @@
   name: "Installing tesseract"
   shell: 'sudo LDFLAGS="-L/usr/local/lib" CFLAGS="-I/usr/local/include" make && make install && make install-langs && ldconfig'
   when: tesseract_configure is changed
+-
+  name: Adding Desktop Icon for Sikulix
+  copy:
+    src: /vagrant/Sikuli.desktop
+    dest: /home/vagrant/Desktop/

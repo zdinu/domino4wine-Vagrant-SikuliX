@@ -16,6 +16,9 @@ Vagrant.configure(2) do |config|
       ansible.playbook = "ub1810-crossover-playbook.yml"
       ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
       ansible.compatibility_mode = "2.0"
-     config.vm.provision :reload
-  end
+     config.vm.provision "shell",
+       run: "always",
+       inline: 'dpkg --add-architecture i386 && sudo apt-get update -y && sudo sed -i -E "s/#  AutomaticLoginEnable = false/AutomaticLoginEnable = true/"  /etc/gdm3/custom.conf && sudo sed -i -E "s/#  AutomaticLogin = user1/AutomaticLogin = vagrant/"  /etc/gdm3/custom.conf && sudo ln -s /vagrant/sikulix.sh /etc/profile.d/sikulix.sh'   
+    config.vm.provision :reload
+   end
 end

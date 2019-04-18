@@ -110,13 +110,16 @@ vagrant up
 The installation process is estimated to take about 15 - 30 Minutes (mayber longer on older machines)
 
 ### Running Sikulix
-Once the VM has popped up on your Desktop, it will reboot once and do a final update check.
+Once the VM has popped up on your Desktop, it will reboot once and do a final update check and it should automatically login to the Vagrant user account.
 
-Login with the username Vagrant, and the Password Vagrant
+If not, Login with the username Vagrant, and the Password Vagrant
+
+Then Launch on the Desktop the Sikuli Shortcut:
+
+#####OR
 
 Then Launch Terminal:
 ```
-sudo cp /vagrant/install/* /vagrant 
 java -jar /vagrant/sikulix.jar -v
 ```
 
