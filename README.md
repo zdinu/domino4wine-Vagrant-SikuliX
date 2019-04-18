@@ -1,6 +1,8 @@
 ﻿# domino4wine-Vagrant-SikuliX
 
-Primary goal is to use Vagrant on Windows, Mac, and Linux to deploy Crossover in an Ubuntu 18.04 VM, in order to install IBM Notes, Designer and Administrator and run it against automated testing using SikuliX 
+Primary goal is to use Vagrant on Windows, Mac, and Linux to deploy Crossover in an Ubuntu 18.04 VM, in order to install IBM Notes, Designer and Administrator and run it against automated testing using SikuliX.
+
+We will use branches for testing indvidual applications with the Master branch.
 
 ## Getting Started
 
