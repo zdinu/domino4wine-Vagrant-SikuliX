@@ -105,7 +105,7 @@ cd domino4wine-Vagrant-SikuliX
 vagrant up
 ```
 
-## NOTE: If you are running this as a headless VM, ensure that you remove the Vagrantfile "vb.gui = true"
+### NOTE: If you are running this as a headless VM, ensure that you remove the line in the Vagrantfile: "vb.gui = true"
 
 The installation process is estimated to take about 15 - 30 Minutes (mayber longer on older machines)
 
